@@ -1,0 +1,244 @@
+  <style>
+/* Global styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f8ff; /* Light blue background */
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Palette */
+:root {
+    --primary: #0077b6; /* Blue */
+    --secondary: #00b894; /* Green */
+    --light: #eafaf1; /* Light green */
+    --dark: #222;
+    --white: #fff;
+}
+
+/* Navbar */
+header {
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--secondary);
+}
+
+.auth-buttons button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.auth-buttons .login {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.auth-buttons .login:hover {
+    background: #e1e1e1;
+}
+
+.auth-buttons .signup {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.auth-buttons .signup:hover {
+    background: #019267;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 119, 182, 0.8), rgba(0, 184, 148, 0.8)), url('Screenshot\ 2025-08-22\ 085258.png') no-repeat center/cover;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    background: var(--secondary);
+    padding: 12px 25px;
+    border-radius: 5px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #019267;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 20px;
+    text-align: center;
+    background: var(--light);
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.services p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px;
+    color: var(--primary);
+}
+
+.card p {
+    margin: 0 15px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.card button {
+    display: block;
+    margin: 0 15px 20px;
+    background: var(--secondary);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #019267;
+}
+
+/* Footer */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 40px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer div {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+/* Popup Box */
+.popup-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup-box h4 {
+    margin: 0 0 10px;
+}
+
+.popup-box p {
+    margin: 0 0 10px;
+}
+
+.popup-box .close-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.popup-box .close-btn:hover {
+    background-color: #0056b3;
+}
